@@ -31,3 +31,60 @@ label{
     height: 30px;
 }
 
+@media only screen and (max-width: 1000px){
+    .newcc form{
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 10px 15px rgba(0,0,0,.1);
+        padding: 5px;
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 780px){
+    .newcc form{
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 10px 15px rgba(0,0,0,.1);
+        padding: 5px;
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 580px){
+    .newcc form{
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 10px 15px rgba(0,0,0,.1);
+        padding: 5px;
+        width: 400px;
+    }
+    .bpay{
+        min-height: 100vh;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        padding-left: 80px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .newcc form{
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 10px 15px rgba(0,0,0,.1);
+        padding: 5px;
+        width: 300px;
+    }
+    .bpay{
+        min-height: 100vh;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        padding-left: 80px;   
+    }
+}

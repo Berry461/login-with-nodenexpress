@@ -8,7 +8,7 @@ const router = require('./router')
 
 const app = express();
 
-const port = process.env.PORT||3000;
+const port = process.env.PORT||4000;
 
 
 
@@ -25,6 +25,7 @@ app.use('/static',express.static(path.join(__dirname,'public')));
 app.use('/images',express.static(path.join(__dirname,'public/images')));
 
 
+
 app.use(session({
     secret:uuidv4(),
     resave:false,
@@ -39,17 +40,21 @@ app.get("/",(req,res)=>{
     res.render('base',{title:'Login System'})
 })
 
-app.get("/",(req,res)=>{
+app.get("/terms",(req,res)=>{
     res.render('terms',{title:'Login System'})
 })
 
-app.get("/",(req,res)=>{
+app.get("/pp",(req,res)=>{
     res.render('pp',{title:'Login System'})
 })
 
-app.get("/",(req,res)=>{
+app.get("/rp",(req,res)=>{
     res.render('rp',{title:'Login System'})
 })
 
+app.get("/signon",(req,res)=>{
+    res.render('signon',{title:'Login System'})
+})
 
-app.listen(port,()=>{console.log("Listening to the server on http://localhost:${PORT}")});
+
+app.listen(port,()=>{console.log("Listening to the server on http://localhost:4000")});

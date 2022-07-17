@@ -1,0 +1,90 @@
+.button_transfering{
+    border: none;
+    background: rgb(31, 42, 105);
+    position: relative;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: 'fira Sans', sans-serif;
+    overflow: hidden;
+    border-radius: 5px;
+    min-width: 525px;
+    height: 50px;
+    
+}
+
+.transonline
+.button___progress{
+    position: absolute;
+    height: 100%;
+    width: 200px;
+    margin-top: 0;
+    margin-left: 0;
+    background-color: red;
+}
+
+.paybox{
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+.transfer{
+    padding-left: 260px;
+}
+
+@media only screen and (max-width: 1000px){
+    .button_transfering{
+        min-width: 325px;
+        height: 50px;
+    }
+    .paybox{
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    .transfer{
+        padding-left: 160px;
+    }
+}
+
+@media only screen and (max-width: 780px){
+    .button_transfering{
+        min-width: 225px;
+        height: 50px;
+    }
+    .paybox{
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    .transfer{
+        padding-left: 160px;
+    }
+}
+
+
+@media only screen and (max-width: 560px){
+    .button_transfering{
+        min-width: 225px;
+        height: 50px;
+    }
+    .paybox{
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    .transfer{
+        padding-left: 60px;
+    }
+}
+}
+
+
+@media only screen and (max-width: 400px){
+    .button_transfering{
+        min-width: 225px;
+        height: 50px;
+    }
+    .paybox{
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    .transfer{
+        padding-left: 20px;
+    }
+}

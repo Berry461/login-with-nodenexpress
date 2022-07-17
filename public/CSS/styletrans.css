@@ -31,48 +31,49 @@ label{
     height: 30px;
 }
 
-.button_transfering{
-    border: none;
-    background: rgb(31, 42, 105);
-    position: relative;
-    color: #ffffff;
-    cursor: pointer;
-    font-family: 'fira Sans', sans-serif;
-    overflow: hidden;
-    border-radius: 5px;
-    min-width: 525px;
-    height: 50px;
-    
-}
-
-.transonline
-.button___progress{
-    position: absolute;
-    height: 100%;
-    width: 200px;
-    margin-top: 0;
-    margin-left: 0;
-    background-color: red;
-}
-
 @media only screen and (max-width: 1000px){
-    .button_transfering{
-        min-width: 325px;
-        height: 50px;
+    .transfer{
+        min-height: 100vh;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
     }
-}
 
 @media only screen and (max-width: 780px){
-    .button_transfering{
-        min-width: 225px;
-        height: 50px;
+    .transfer{
+        min-height: 100vh;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
     }
 }
 
 @media only screen and (max-width: 560px){
-
+    .transfer{
+        min-height: 100vh;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        padding-left: 80px;
+    }
 }
 
-@media only screen and (max-width: 500px){
 
+@media only screen and (max-width: 400px){
+    .transfer{
+        min-height: 100vh;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        padding-left: 80px;
+        font-size: 15px;
+    }
 }

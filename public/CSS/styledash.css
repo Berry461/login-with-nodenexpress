@@ -15,7 +15,40 @@ body{
 a{
     text-decoration: none;
 }
+:root{
+    --primary-color: #0E4BF1;
+    --panel-color: #FFF;
+    --text-color: #000;
+    --black-light-color: #707070;
+    --border-color: #e6e5e5;
+    --toggle-color: #DDD;
+    --box1-color: #4DA3FF;
+    --box2-color: #FFE6AC;
+    --box3-color: #E7D1FC;
+    --title-icon-color: #FFF;
 
+    --tran-05: all 0.5s ease;
+    --tran-03: all 0.3s ease;
+    --tran-03: all 0.2s ease;
+
+}
+.container-dash{
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    /*background-color: blue;*/
+}
+.container-dash.dark{
+    --primary-color: #3A3B3C;
+    --panel-color: #242526;
+    --text-color: #CCC;
+    --black-light-color: #CCC;
+    --border-color: #4DACAC;
+    --toggle-color: #FFF;
+    --box1-color: #3A3B3C;
+    --box2-color: #3A3B3C;
+    --box3-color: #3A3B3C;
+    --title-icon-color: #CCC;
+}
 .landing-content{
     display: flex;
     justify-content: space-between;
@@ -72,18 +105,15 @@ a{
 .btngraph:hover{
     background-color: red;
 }
-.btnarising:hover{
+.btarising:hover{
     background-color: red;
 }
-/*.btnarising{
-    margin-top: 20px;
-}*/
 .landing-content span{
     color: rgb(31, 42, 105);
     font-size: 50px;
 }
 .malbetter span{
-    color: z;
+    color: rgb(31, 42, 105);
     font-size: 50px;
 }
 .signon{
@@ -98,62 +128,6 @@ a{
     box-shadow: 0 0 40px rgba(0, 0, 0,0.2);
     background: #ffffff;
     border-radius: 10px;
-}
-.form-signon h1{
-    padding-left: 120px;
-}
-.form__button{
-    margin-left: 20px;
-}
-.form__link{
-    margin-left: 20px;
-}
-.form__create{
-    margin-left: 20px;
-}
-.form__input-group{
-    padding-bottom: 5px;
-}
-.form__input-group .handlere{
-    font-size: 18px;
-}
-.form__input-group .handlerp{
-    font-size: 18px;
-}
-.form__input-group .handleru{
-    font-size: 18px;
-}
-.handlere{
-    padding-right: 93px;
-    padding-left: 20px;
-}
-.handleru{
-    padding-right: 47px;
-    padding-left: 20px;
-}
-.handlerp{
-    padding-right: 55px;
-    padding-left: 20px;
-}
-.form__button{
-    margin-top: 20px;
-    color: white;
-    background-color: red;
-}
-.form__inputun{
-    
-}
-.form__inputu{
-    margin-top: 10px;
-    padding: 5px;
-}
-.form__input_u{
-    margin-top: 10px;
-    padding: 5px;
-}
-.form__inputp{
-    margin-top: 10px;
-    padding: 5px;
 }
 #reach{
     margin-top: 45px;
@@ -198,7 +172,24 @@ nav{
     transition: var(--tran-05);
     
 }
-
+nav.close{
+    width: 73px;
+}
+nav .logo-name{
+    display: flex;
+    align-items: center;
+}
+/*nav .logo-image{
+    display: flex;
+    justify-content: center;
+    min-width: 45px;
+    background-color: red;
+}*/
+/*nav .logo-image img{
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}*/
 nav .logo-name .logo_name{
     font-size: 22px;
     font-weight: 600;
@@ -238,7 +229,9 @@ nav .menu-items{
     border-radius: 50%;
     background-color: var(--primary-color)
 }
-
+.container-dash.dark li a:hover:before{
+    background-color: var(--panel-color);
+}
 .menu-items li a i{
     font-size: 24px;
     min-width: 45px;
@@ -270,7 +263,10 @@ nav.close li a .link{
 .dash{
     cursor: pointer;
 }
-
+.container-dash.dark .navlinks li a:hover i,
+.container-dash.dark .navlinks li a:hover .link{
+    color: var(--text-color);
+}
 .menu-items .logout-dash{
     padding-top: 10px;
     border-top: 1px solid var(--border-color);
@@ -310,10 +306,53 @@ nav.close li a .link{
     border-radius: 50%;
     transition: var(--tran-03);
 }
-
+.container-dash.dark .switch:before{
+    left: 20px;
+}
+.dashboard{
+    position: relative;
+    left: 250px;
+    background-color: var(--panel-color);
+    min-height: 100vh;
+    width: calc(100% - 250px);
+    padding: 10px 14px;
+    transition: var(--tran-05);
+    
+}
 nav.close ~ .dashboard{
     left: 73px;
     width: calc(100% - 73px);
+}
+.dashboard .top{
+    position: fixed;
+    top: 0;
+    left: 250px;
+    display: flex;
+    width: calc(100% - 250px);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background-color: var(--panel-color);
+    transition: var(--tran-05);
+    z-index: 10;
+}
+nav.close ~ .dashboard .top{
+    left: 73px;
+    width: calc(100% - 73px);
+}
+.dashboard .top .sidebar-toggle{
+    font-size: 26px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+.dashboard .top .search-box{
+    position: relative;
+    height: 45px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 30px;
+    background-color: red;
+
 }
 .top .search-box input{
     position: absolute;
@@ -345,11 +384,93 @@ nav.close ~ .dashboard{
     width: 40px;
     border-radius: 50%;
 }
-
+.dashboard .dash-content{
+    /*padding-top: 40px;*/
+}
+.dashboard{
+    display: none
+}
 .active{
     display: block;
 }
-
+.dash-content > :first-child{
+    margin-top: 0;
+}
+.dash-content .title{
+    display: flex;
+    align-items: center;
+    margin: 60px 0 30px 0;
+}
+.dash-content .title i{
+    position: relative;
+    height: 35px;
+    width: 35px;
+    background-color: var(--primary-color);
+    border-radius: 6px;
+    color: var(--title-icon-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+.dash-content .title .text{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+.dash-content .boxes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.dash-content .boxes .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    width: calc(100% / 3 - 15px);
+    padding: 15px 20px;
+    background-color: var(--box1-color);
+}
+.boxes .box i{
+    font-size: 35px;
+    color: var(--text-color);
+}
+.boxes .box .text{
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: 500;
+    color:var(--text-color);
+}
+.boxes .box .balance{
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.boxes .box .credit{
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.boxes .box .paybill{
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.boxes .box.box2{
+    background-color: var(--box2-color);
+}
+.boxes .box.box3{
+    background-color: var(--box3-color);
+}
+.dash-content .activity .activity-data{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
 .activity .activity-data{
     display: flex;
     /*width: calc(100% / 5 - 15px);*/
@@ -450,7 +571,10 @@ ul{
     flex-direction: row;
 }
 
-@media only screen and (max-width: 1080px){
+
+
+
+@media only screen and (max-width: 1000px){
     .pointers .help{
         display: flex;
         justify-content: flex-end;
@@ -474,7 +598,37 @@ ul{
     nav{
         width: 73px;
     }
-   
+    nav.close{
+        width: 250px;
+    }
+    nav .logo_name{
+        opacity: 0;
+        pointer-events: none;
+    }
+    nav.close .logo_name{
+        opacity: 1;
+        pointer-events: auto;
+    }
+    nav.close li a .link{
+        opacity: 1;
+        pointer-events: auto;
+    }
+    nav ~ .dashboard{
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+    nav.close ~ .dashboard{
+        left: 250px;
+        width: calc(100% - 250px);
+    }
+    nav ~ .dashboard .top{
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+    nav.close ~ .dashboard .top{
+        left: 250px;
+        width: calc(100% - 250px);
+    }
     .activity .activity-data{
         overflow-y: scroll;
     }
@@ -483,188 +637,78 @@ ul{
        flex-direction: column-reverse; 
        
     }
-    .form-signon h1{
-        padding-left: 115px;
-    }
     .infolast{
     padding: 20px 20px;
     }
     .careful{
         padding-top: 160px;
     }
-    .form__button{
-        margin-top: 20px;
-        color: white;
-        background-color: red;
-    }
 }
 
-@media only screen and (max-width: 1000px){
-    .form-signon h1{
-        padding-left: 80px;
-    }
-    .handlere{   
-        padding-left: 0px;
-    }
-    .handleru{
-        padding-left: 0px;
-    }
-    .handlerp{
-        padding-left: 0px;
-    }
-    .form__button{
-        margin-left: 0px;
-    }
-    .form__link{
-        margin-left: 0px;
-    }
-    .form__create{
-        margin-left: 0px;
-    }
-    .form__button{
-        margin-top: 20px;
-        color: white;
-        background-color: red;
-    }
-}
 @media only screen and (max-width: 780px){
-    .form-signon h1{
-        padding-left: 20px;
+    .dash-content .boxes .box{
+        width: calc(100% / 2 - 15px);
+        margin-top: 15px;
     }
-    .handlere{   
-        padding-left: 0px;
-    }
-    .handleru{
-        padding-left: 0px;
-    }
-    .handlerp{
-        padding-left: 0px;
-    }
-    .form__button{
-        margin-left: 0px;
-    }
-    .form__link{
-        margin-left: 0px;
-    }
-    .form__create{
-        margin-left: 0px;
-    }
-    .form__button{
-        margin-top: 20px;
-        color: white;
-        background-color: red;
-    }
-   
+
+    
 }
 
 @media only screen and (max-width: 560px){
-    .form-signon h1{
-        padding-left: 30px;
-    }
-    .handlere{   
-        padding-left: 0px;
-    }
-    .handlerp{
-        padding-left: 0px;
-    }
-    .form__button{
-        margin-left: 0px;
-    }
-    .form__link{
-        margin-left: 0px;
-    }
-    .form__create{
-        margin-left: 0px;
-    }
-    .form__button{
-        margin-top: 20px;
-        color: white;
-        background-color: red;
+    .dash-content .boxes .box{
+        width: 100%;
     }
 }
 
 @media only screen and (max-width: 500px){
+    nav{
+        width: 73px;
+    }
+    nav.close{
+        width: 73px;
+    }
+    nav .logo_name{
+        opacity: 0;
+        pointer-events: none;
+    }
+    nav.close .logo_name{
+        opacity: 0;
+        pointer-events: none;
+    }
+    nav.close li a .link{
+        opacity: 0;
+        pointer-events: none;
+    }
+    nav ~ .dashboard{
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+    nav.close ~ .dashboard{
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+    nav ~ .dashboard .top{
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+    nav.close ~ .dashboard .top{
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+    .dashboard .top .sidebar-toggle{
+        display: none;
+    }
     .signon{
-        position: relative;
-        flex-basis: 60%;
-        display: flex;
-        align-items: center; 
-        width: 250px;
         height: 500px;
-        max-width: 300px;
-        margin: 1rem;
-        padding: 2px;
-        box-shadow: 0 0 40px rgba(0, 0, 0,0.2);
-        background: #ffffff;
-        border-radius: 10px;
-        overflow: hidden;
+        width: 500px;
     }
-    .form__title {
-        
-        font-size: 20px;
-    }
-    .form__inputu{
-        padding: 7px;
-        margin-top: 10px;
-        width: 100%;
-    }
-    .form__inputp{
-        padding: 7px;
-        margin-top: 10px;
-        width: 100%;
-    }
-    .form__button{
-        margin-left: 0px;
-    }
-    .form__link{
-        margin-left: 0px;
-    }
-    .form__create{
-        margin-left: 0px;
-    }
-    .handlere{   
-        padding-left: 0px;
-    }
-    .handlerp{
-        padding-left: 0px;
-    }
-    .form__button{
-        margin-top: 20px;
-        color: white;
-        background-color: red;
-    }
-    .form-signon h1{
-        padding-left: 45px;
-    }
-    .infoview {
-        width: 25%;
-    }  
     .infoview h1{
-        font-size: 20px;
-        
+        font-size: 40px;
     }
     .infoview span{
-        font-size: 30px;
-    }
-    .infoview .textgraph{
-        font-size: 12px
-    }
-    .center-card{
-        width: 25%;
+        font-size: 40px;
     }
     .bcful{
         padding: 40px;
-    }
-    .infolast h1{
-        font-size: 20px;
-    }
-    .infolast span{
-        font-size: 30px;
-    }
-    .infolast .textgraph{
-        font-size: 12px;  
-    }
-    .btnarising{
-        margin-top: 40px;
     }
 }

@@ -99,10 +99,10 @@ router.get('/logout',(req,res)=>{
         res.render('base',{title:'City Bank'})
     
     }
-    
+   
     })
 
-/*router.get("/",(req,res)=>{
+/*router.get("/terms",(req,res)=>{
     res.render('base',{title:'Login System'})
 })
     
@@ -112,7 +112,8 @@ router.get("/",(req,res)=>{
     
 router.get("/",(req,res)=>{
     res.render('base',{title:'Login System'})
-})   */
+})  */ 
+
 
 })
 module.exports = router;
